@@ -1,0 +1,29 @@
+
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['wordtree'] });
+        google.charts.setOnLoadCallback(drawSimpleNodeChart);
+        function drawSimpleNodeChart() {
+            var data = google.visualization.arrayToDataTable(
+                [['Phrases'],
+                    ['Linux is an open source operating system (OS). An operating system is the software that directly manages a system’s hardware and resources, like CPU, memory, and storage. The OS sits between applications and hardware and makes the connections between all of your software and the physical resources that do the work. Think about an OS like a car engine. An engine can run on its own, but it becomes a functional car when it’s connected with a transmission, axles, and wheels. Without the engine running properly, the rest of the car won’t work. Linux was designed to be similar to UNIX, but has evolved to run on a wide variety of hardware from phones to supercomputers. Every Linux-based OS involves the Linux kernel—which manages hardware resources—and a set of software packages that make up the rest of the operating system. Organizations can also choose to run their Linux OS on a Linux server. The OS includes some common core components, like the GNU tools, among others. These tools give the user a way to manage the resources provided by the kernel, install additional software, configure performance and security settings, and more. All of these tools bundled together make up the functional operating system. Because Linux is an open source OS, combinations of software can vary between Linux distributions. Linux is a free, open source operating system, released under the GNU General Public License (GPL). Anyone can run, study, modify, and redistribute the source code, or even sell copies of their modified code, as long as they do so under the same license. Linux has become the largest open sources software project in the world. Professional and hobbyist programmers and developers from around the world contribute to the Linux kernel, adding features, finding and fixing bugs and security flaws, live patching, and providing new ideas—all while sharing their contributions back to the community.']
+            ]
+            );
+            var options = {
+                wordtree: {
+                    format: 'implicit',
+                    type: 'double',
+                    word: 'Linux'
+                }
+            };
+            var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+            wordtree.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="wordtree_double" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
